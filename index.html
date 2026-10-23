@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=http://127.0.0.1:5000/">
+  <title>Redirecting to GlowRight Flask Application...</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #faf8f5;
+      color: #242b28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1.5rem;
+      box-sizing: border-box;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2d9cd;
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #2d4a3e;
+      margin-top: 0;
+    }
+    p {
+      color: #5e6b65;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.75rem 1.6rem;
+      background: #4a6b5d;
+      color: white;
+      text-decoration: none;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #2d4a3e;
+    }
+    .code-box {
+      background: #f1ebe3;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin: 1rem 0;
+      display: inline-block;
+    }
+  </style>
+  <script>
+    window.location.href = "http://127.0.0.1:5000/";
+  </script>
+</head>
+<body>
+  <div class="card">
+    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌿</div>
+    <h1>Opening GlowRight Web App</h1>
+    <p>
+      GlowRight is powered by a Python Flask server running on port <strong>5000</strong>.
+      If you are not redirected automatically in 2 seconds, click below:
+    </p>
+    <a href="http://127.0.0.1:5000/" class="btn">Go to GlowRight (http://127.0.0.1:5000)</a>
+    <p style="font-size: 0.8rem; color: #8a9690; margin-top: 1.5rem;">
+      To start the server manually in terminal:<br>
+      <span class="code-box">python app.py</span>
+    </p>
+  </div>
+</body>
+</html>
