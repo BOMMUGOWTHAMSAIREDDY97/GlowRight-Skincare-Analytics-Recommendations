@@ -1,0 +1,157 @@
+review_id,product_id,rating,review_text,date,sentiment,is_demo
+REV-0001,GR-001,5.0,Gentle yet effective. Finally found a cleanser that does not break me out or cause allergic flare-ups.,2026-01-08,positive,True
+REV-0002,GR-001,4.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-01-18,neutral,True
+REV-0003,GR-001,4.0,Absolutely love this cleanser. The Oat Kernel Extract makes an immediate difference in hydration and my skin has never felt softer.,2026-01-03,positive,True
+REV-0004,GR-001,5.0,Absolutely love this cleanser. The Oat Kernel Extract makes an immediate difference in hydration and my skin has never felt softer.,2026-03-23,positive,True
+REV-0005,GR-001,3.0,"A pleasant basic cleanser. It keeps my skin moisturized, but you can find comparable products for slightly less money.",2026-03-15,neutral,True
+REV-0006,GR-002,3.0,"It is an okay cleanser. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-23,neutral,True
+REV-0007,GR-002,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-02-25,positive,True
+REV-0008,GR-002,4.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-02-12,positive,True
+REV-0009,GR-002,4.0,"It is an okay cleanser. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-03-15,neutral,True
+REV-0010,GR-003,1.0,The added fragrance was way too overwhelming for my reactive skin. Would not recommend if you are fragrance-sensitive.,2026-02-18,negative,True
+REV-0011,GR-003,3.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-01-19,neutral,True
+REV-0012,GR-003,4.0,"It is an okay cleanser. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-08,neutral,True
+REV-0013,GR-004,1.0,Unfortunately this caused small bumps and clogged pores on my forehead within four days. Had to stop using it.,2026-02-09,negative,True
+REV-0014,GR-004,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-12,neutral,True
+REV-0015,GR-004,4.0,Gentle yet effective. Finally found a cleanser that does not break me out or cause allergic flare-ups.,2026-03-20,positive,True
+REV-0016,GR-005,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-02-15,positive,True
+REV-0017,GR-005,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-01-27,positive,True
+REV-0018,GR-005,5.0,Absolutely love this cleanser. The Centella Asiatica Extract makes an immediate difference in hydration and my skin has never felt softer.,2026-02-13,positive,True
+REV-0019,GR-006,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-02-21,positive,True
+REV-0020,GR-006,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-01-09,positive,True
+REV-0021,GR-006,5.0,Gentle yet effective. Finally found a serum that does not break me out or cause allergic flare-ups.,2026-02-19,positive,True
+REV-0022,GR-007,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-01-03,positive,True
+REV-0023,GR-007,4.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-03-06,neutral,True
+REV-0024,GR-007,5.0,"This serum from Aura Botanica is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-03-13,positive,True
+REV-0025,GR-007,1.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-01-18,negative,True
+REV-0026,GR-008,4.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-02-25,neutral,True
+REV-0027,GR-008,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-10,neutral,True
+REV-0028,GR-008,5.0,Absolutely love this serum. The L-Ascorbic Acid 15% makes an immediate difference in hydration and my skin has never felt softer.,2026-01-17,positive,True
+REV-0029,GR-008,5.0,"This serum from Solis Skincare is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-03-27,positive,True
+REV-0030,GR-008,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-01-12,positive,True
+REV-0031,GR-009,1.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-02-20,negative,True
+REV-0032,GR-009,5.0,"This serum from Solis Skincare is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-02-27,positive,True
+REV-0033,GR-009,4.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-03,positive,True
+REV-0034,GR-009,5.0,"This serum from Solis Skincare is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-03-05,positive,True
+REV-0035,GR-009,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-17,positive,True
+REV-0036,GR-010,2.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-01-23,negative,True
+REV-0037,GR-010,4.0,"A pleasant basic serum. It keeps my skin moisturized, but you can find comparable products for slightly less money.",2026-02-21,neutral,True
+REV-0038,GR-010,4.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-01-08,positive,True
+REV-0039,GR-010,5.0,Absolutely love this serum. The Glycerin makes an immediate difference in hydration and my skin has never felt softer.,2026-01-19,positive,True
+REV-0040,GR-011,5.0,Absolutely love this serum. The Butylene Glycol makes an immediate difference in hydration and my skin has never felt softer.,2026-01-03,positive,True
+REV-0041,GR-011,4.0,"It is an okay serum. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-08,neutral,True
+REV-0042,GR-011,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-24,positive,True
+REV-0043,GR-012,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-01-07,positive,True
+REV-0044,GR-012,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-02-14,positive,True
+REV-0045,GR-012,4.0,Absolutely love this moisturizer. The Caprylic/Capric Triglyceride makes an immediate difference in hydration and my skin has never felt softer.,2026-02-02,positive,True
+REV-0046,GR-012,3.0,"It is an okay moisturizer. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-01-07,neutral,True
+REV-0047,GR-012,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-02-06,positive,True
+REV-0048,GR-013,5.0,"This moisturizer from DermClear Labs is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-03-26,positive,True
+REV-0049,GR-013,4.0,Absolutely love this moisturizer. The Dimethicone makes an immediate difference in hydration and my skin has never felt softer.,2026-01-25,positive,True
+REV-0050,GR-013,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-07,positive,True
+REV-0051,GR-013,1.0,"Too drying for my sensitive skin. Left my face feeling tight, stinging, and uncomfortably red.",2026-02-01,negative,True
+REV-0052,GR-014,1.0,The added fragrance was way too overwhelming for my reactive skin. Would not recommend if you are fragrance-sensitive.,2026-03-14,negative,True
+REV-0053,GR-014,2.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-02-23,negative,True
+REV-0054,GR-014,5.0,Gentle yet effective. Finally found a moisturizer that does not break me out or cause allergic flare-ups.,2026-03-02,positive,True
+REV-0055,GR-014,4.0,"It is an okay moisturizer. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-01-11,neutral,True
+REV-0056,GR-015,4.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-01-06,neutral,True
+REV-0057,GR-015,1.0,Unfortunately this caused small bumps and clogged pores on my forehead within four days. Had to stop using it.,2026-03-03,negative,True
+REV-0058,GR-015,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-04,positive,True
+REV-0059,GR-016,4.0,"It is an okay moisturizer. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-03,neutral,True
+REV-0060,GR-016,4.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-02-11,neutral,True
+REV-0061,GR-016,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-02-09,positive,True
+REV-0062,GR-017,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-01-11,neutral,True
+REV-0063,GR-017,4.0,"This sunscreen from Solis Skincare is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-01-18,positive,True
+REV-0064,GR-017,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-01-03,positive,True
+REV-0065,GR-018,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-03-20,positive,True
+REV-0066,GR-018,4.0,Gentle yet effective. Finally found a sunscreen that does not break me out or cause allergic flare-ups.,2026-02-05,positive,True
+REV-0067,GR-018,5.0,"This sunscreen from Aura Botanica is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-02-09,positive,True
+REV-0068,GR-018,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-03-22,positive,True
+REV-0069,GR-019,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-03-03,neutral,True
+REV-0070,GR-019,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-01,neutral,True
+REV-0071,GR-019,1.0,Caused a noticeable breakout and burning sensation around my cheek area. Not suitable for my skin type.,2026-03-06,negative,True
+REV-0072,GR-019,3.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-01-18,neutral,True
+REV-0073,GR-020,4.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-02-27,positive,True
+REV-0074,GR-020,3.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-01-05,neutral,True
+REV-0075,GR-020,5.0,Absolutely love this sunscreen. The Aqua makes an immediate difference in hydration and my skin has never felt softer.,2026-03-07,positive,True
+REV-0076,GR-021,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-03-20,positive,True
+REV-0077,GR-021,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-01-26,positive,True
+REV-0078,GR-021,3.0,"It is an okay toner. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-24,neutral,True
+REV-0079,GR-022,1.0,Caused a noticeable breakout and burning sensation around my cheek area. Not suitable for my skin type.,2026-01-09,negative,True
+REV-0080,GR-022,1.0,Unfortunately this caused small bumps and clogged pores on my forehead within four days. Had to stop using it.,2026-01-28,negative,True
+REV-0081,GR-022,1.0,"Too drying for my sensitive skin. Left my face feeling tight, stinging, and uncomfortably red.",2026-02-27,negative,True
+REV-0082,GR-022,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-01,positive,True
+REV-0083,GR-023,4.0,Gentle yet effective. Finally found a toner that does not break me out or cause allergic flare-ups.,2026-02-25,positive,True
+REV-0084,GR-023,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-01-01,positive,True
+REV-0085,GR-023,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-19,neutral,True
+REV-0086,GR-024,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-02-24,positive,True
+REV-0087,GR-024,5.0,"This toner from Verdant Alchemy is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-01-19,positive,True
+REV-0088,GR-024,4.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-03-17,positive,True
+REV-0089,GR-025,4.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-01-22,neutral,True
+REV-0090,GR-025,5.0,"This exfoliant from DermClear Labs is a holy grail for my dry, sensitive skin. No irritation whatsoever and gives a gorgeous glow.",2026-02-20,positive,True
+REV-0091,GR-025,4.0,"It is an okay exfoliant. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-03-10,neutral,True
+REV-0092,GR-025,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-03-13,positive,True
+REV-0093,GR-025,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-14,positive,True
+REV-0094,GR-026,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-13,positive,True
+REV-0095,GR-026,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-07,neutral,True
+REV-0096,GR-026,4.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-02-11,neutral,True
+REV-0097,GR-026,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-26,positive,True
+REV-0098,GR-027,5.0,Gentle yet effective. Finally found a exfoliant that does not break me out or cause allergic flare-ups.,2026-01-03,positive,True
+REV-0099,GR-027,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-01-05,positive,True
+REV-0100,GR-027,4.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-15,positive,True
+REV-0101,GR-028,4.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-02-13,neutral,True
+REV-0102,GR-028,4.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-01-25,positive,True
+REV-0103,GR-028,3.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-03-26,neutral,True
+REV-0104,GR-028,5.0,Absolutely love this exfoliant. The Gluconolactone 8% (PHA) makes an immediate difference in hydration and my skin has never felt softer.,2026-01-28,positive,True
+REV-0105,GR-028,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-25,positive,True
+REV-0106,GR-029,3.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-03-27,neutral,True
+REV-0107,GR-029,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-02-15,positive,True
+REV-0108,GR-029,3.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-03-25,neutral,True
+REV-0109,GR-029,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-01-15,positive,True
+REV-0110,GR-029,3.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-02-11,neutral,True
+REV-0111,GR-030,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-13,positive,True
+REV-0112,GR-030,4.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-02-14,positive,True
+REV-0113,GR-030,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-01-02,positive,True
+REV-0114,GR-030,4.0,"A pleasant basic eye cream. It keeps my skin moisturized, but you can find comparable products for slightly less money.",2026-01-23,neutral,True
+REV-0115,GR-030,3.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-01-16,neutral,True
+REV-0116,GR-031,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-03-18,positive,True
+REV-0117,GR-031,3.0,"Does the job without fanfare. Mild scent that fades quickly, though I wish it had higher percentage of actives.",2026-01-16,neutral,True
+REV-0118,GR-031,4.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-13,positive,True
+REV-0119,GR-031,4.0,"A pleasant basic eye cream. It keeps my skin moisturized, but you can find comparable products for slightly less money.",2026-02-06,neutral,True
+REV-0120,GR-032,1.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-03-13,negative,True
+REV-0121,GR-032,3.0,"It is an okay mask. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-02-21,neutral,True
+REV-0122,GR-032,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-02,positive,True
+REV-0123,GR-033,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-11,positive,True
+REV-0124,GR-033,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-01-27,positive,True
+REV-0125,GR-033,5.0,Absolutely love this mask. The Butylene Glycol makes an immediate difference in hydration and my skin has never felt softer.,2026-03-08,positive,True
+REV-0126,GR-033,4.0,Absolutely love this mask. The Butylene Glycol makes an immediate difference in hydration and my skin has never felt softer.,2026-01-08,positive,True
+REV-0127,GR-034,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-16,positive,True
+REV-0128,GR-034,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-02-23,positive,True
+REV-0129,GR-034,4.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-03-20,neutral,True
+REV-0130,GR-035,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-04,positive,True
+REV-0131,GR-035,5.0,Gentle yet effective. Finally found a mask that does not break me out or cause allergic flare-ups.,2026-03-13,positive,True
+REV-0132,GR-035,4.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-02-23,positive,True
+REV-0133,GR-035,1.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-03-26,negative,True
+REV-0134,GR-035,4.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-03-14,neutral,True
+REV-0135,GR-036,4.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-02-28,positive,True
+REV-0136,GR-036,3.0,"It is an okay moisturizer. Decent hydration, but I did not notice any dramatic change in my skin texture after a month.",2026-03-12,neutral,True
+REV-0137,GR-036,4.0,"A pleasant basic moisturizer. It keeps my skin moisturized, but you can find comparable products for slightly less money.",2026-02-05,neutral,True
+REV-0138,GR-036,5.0,Gentle yet effective. Finally found a moisturizer that does not break me out or cause allergic flare-ups.,2026-02-15,positive,True
+REV-0139,GR-037,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-01-27,neutral,True
+REV-0140,GR-037,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-25,positive,True
+REV-0141,GR-037,3.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-01-11,neutral,True
+REV-0142,GR-037,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-01-16,positive,True
+REV-0143,GR-037,5.0,Gentle yet effective. Finally found a serum that does not break me out or cause allergic flare-ups.,2026-03-09,positive,True
+REV-0144,GR-038,1.0,Did not see any difference at all. Overpriced for what essentially feels like basic glycerin water.,2026-01-17,negative,True
+REV-0145,GR-038,5.0,"My skin barrier was damaged from over-exfoliating and this restored it within days. Plump, calm, and hydrated skin.",2026-01-18,positive,True
+REV-0146,GR-038,4.0,"Good everyday staple, but nothing revolutionary. Might repurchase if on sale, but still exploring alternatives.",2026-02-16,neutral,True
+REV-0147,GR-038,1.0,Unfortunately this caused small bumps and clogged pores on my forehead within four days. Had to stop using it.,2026-02-08,negative,True
+REV-0148,GR-038,4.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-02-19,neutral,True
+REV-0149,GR-039,3.0,"Works moderately well, though it feels a bit heavier on my combination skin than I expected for daytime use.",2026-03-24,neutral,True
+REV-0150,GR-039,5.0,"Super impressed with the ingredient list. High concentration of active ingredients at an honest, accessible price.",2026-02-10,positive,True
+REV-0151,GR-039,5.0,"I was skeptical at first, but after three weeks of consistent use, my redness has visibly calmed down. Highly recommend!",2026-03-04,positive,True
+REV-0152,GR-039,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-03-07,positive,True
+REV-0153,GR-040,4.0,Gentle yet effective. Finally found a toner that does not break me out or cause allergic flare-ups.,2026-01-27,positive,True
+REV-0154,GR-040,5.0,Incredible product! It delivers exactly what it promises without any greasy residue or strong artificial fragrance.,2026-01-10,positive,True
+REV-0155,GR-040,3.0,"The formula is fine and does not irritate, but the packaging pump occasionally gets stuck. Average for the price.",2026-01-02,neutral,True
+REV-0156,GR-040,5.0,"Worth every penny. The texture is lightweight, absorbs quickly, and layers beautifully under makeup and sunscreen.",2026-01-04,positive,True

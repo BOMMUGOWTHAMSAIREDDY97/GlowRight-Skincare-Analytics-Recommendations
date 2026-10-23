@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlowRight | Ingredient-Aware Skincare Recommendations & Review Analytics</title>
+  <meta name="description" content="A professional beauty & wellness data science web application featuring TF-IDF content-based product recommendations, review sentiment classification, and data evaluation dashboards.">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Demo Data & Academic Disclaimer Banner -->
+  <aside class="demo-banner" aria-label="Demo notice">
+    <strong>Demo Data</strong>
+    <span>{{ demo_notice }}</span>
+  </aside>
+
+  <!-- Sticky Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-link" onclick="switchTab('home')">
+        <div class="brand-logo-icon">🌿</div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">GlowRight</span>
+          <span class="brand-subtitle">Skincare Analytics &amp; Recommendations</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <button class="nav-btn active" data-tab="home" id="nav-home">Home</button>
+        <button class="nav-btn" data-tab="catalogue" id="nav-catalogue">Catalogue</button>
+        <button class="nav-btn" data-tab="recommender" id="nav-recommender">Recommender</button>
+        <button class="nav-btn" data-tab="reviews" id="nav-reviews">Reviews</button>
+        <button class="nav-btn" data-tab="evaluation" id="nav-evaluation">Evaluation &amp; ML</button>
+        <button class="nav-btn" data-tab="about" id="nav-about">About &amp; Ethics</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Views Container -->
+  <main class="container">
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 1: HOME & OVERVIEW -->
+    <!-- ===================================================================== -->
+    <section id="view-home" class="view-section active">
+      <div class="hero-card">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>✨</span> 6-Week Data Science with Python Internship Project
+          </div>
+          <h1 class="hero-title">Ingredient-Aware Skincare Intelligence &amp; Review Analytics</h1>
+          <p class="hero-lead">
+            Explore curated formulations, filter products by active INCI ingredients and personal budget, 
+            receive content-based recommendations, and investigate customer sentiment trends through reproducible data science.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-action="jump-rec">Launch Recommender</button>
+            <button class="btn btn-secondary" data-action="jump-catalogue">Browse 40 Products</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Dataset Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Catalogue Depth</div>
+          <div class="stat-value" id="stat-products">--</div>
+          <div class="stat-meta">Validated skincare products</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Customer Reviews</div>
+          <div class="stat-value" id="stat-reviews">--</div>
+          <div class="stat-meta">Sentiment-labeled records</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Median Price</div>
+          <div class="stat-value" id="stat-avg-price">--</div>
+          <div class="stat-meta">Across 8 product categories</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Average Rating</div>
+          <div class="stat-value" id="stat-avg-rating">--</div>
+          <div class="stat-meta">Community satisfaction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Brands Profiled</div>
+          <div class="stat-value" id="stat-brands">--</div>
+          <div class="stat-meta">Specialist cosmetic labels</div>
+        </div>
+      </div>
+
+      <!-- Safety Alert -->
+      <div class="alert-box">
+        <div class="alert-title">Responsible AI &amp; Dermatological Prototype Notice</div>
+        <p>{{ safety_disclaimer }}</p>
+      </div>
+
+      <!-- Feature Highlights -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div class="stat-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+            1. Content-Based Matching
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+            High-dimensional TF-IDF vectorization and Cosine Similarity pair user intent and preferred active ingredients with transparent match rationales.
+          </p>
+        </div>
+        <div class="stat-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+            2. Hard Exclusion Filtering
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+            Pre-ranking constraints ensure strict exclusion of undesirable compounds (such as artificial fragrance or drying alcohols) before similarity scoring.
+          </p>
+        </div>
+        <div class="stat-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+            3. Leakage-Free Sentiment ML
+          </h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+            Supervised text classifier evaluated on held-out test splits, comparing balanced Logistic Regression against a Majority-Class baseline.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 2: PRODUCT CATALOGUE -->
+    <!-- ===================================================================== -->
+    <section id="view-catalogue" class="view-section">
+      <div class="section-header">
+        <div class="section-tag">Explore Formulations</div>
+        <h2 class="section-title">Skincare Product Catalogue</h2>
+        <p class="section-description">
+          Browse, search, and inspect benchmark skincare products. Filter by category, budget constraints, or specific active INCI ingredients.
+        </p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="filter-row">
+          <div class="search-box">
+            <input 
+              type="text" 
+              id="catalogue-search-input" 
+              class="input-field" 
+              placeholder="Search by name, brand, or ingredient (e.g., Niacinamide, Cica)..."
+              aria-label="Search products"
+            >
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.6rem; min-width: 220px;">
+            <label for="catalogue-price-slider" style="font-size: 0.82rem; font-weight: 600; color: var(--color-primary-dark);">
+              Max: <span id="catalogue-price-display" style="color: var(--color-terracotta); font-weight: 700;">$75</span>
+            </label>
+            <input 
+              type="range" 
+              id="catalogue-price-slider" 
+              min="10" 
+              max="75" 
+              step="5" 
+              value="75" 
+              style="flex: 1; accent-color: var(--color-primary);"
+            >
+          </div>
+          <div style="min-width: 180px;">
+            <select id="catalogue-sort-select" class="select-field" aria-label="Sort products">
+              <option value="rating:desc">Highest Rated</option>
+              <option value="price:asc">Price: Low to High</option>
+              <option value="price:desc">Price: High to Low</option>
+              <option value="reviews:desc">Most Reviewed</option>
+              <option value="name:asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-pills" id="catalogue-category-pills">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Product Cards injected by JS -->
+      </div>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+        <span id="catalogue-page-info" style="font-size: 0.85rem; color: var(--color-text-muted);">Page 1 of 1</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="catalogue-prev-page" class="btn btn-secondary btn-sm" disabled>Previous</button>
+          <button id="catalogue-next-page" class="btn btn-secondary btn-sm" disabled>Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 3: PERSONALIZED RECOMMENDATIONS -->
+    <!-- ===================================================================== -->
+    <section id="view-recommender" class="view-section">
+      <div class="section-header">
+        <div class="section-tag">Machine Learning Matching</div>
+        <h2 class="section-title">Personalized Recommendation Explorer</h2>
+        <p class="section-description">
+          Find products tailored to your preferences using content-based vector similarity. 
+          Exclude ingredients you want to avoid and set budget ceilings.
+        </p>
+      </div>
+
+      <div class="rec-layout">
+        <!-- Search & Preference Form -->
+        <div class="rec-form-panel">
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: 1.2rem;">
+            Preference Builder
+          </h3>
+
+          <div class="form-group">
+            <label class="form-label" for="rec-query-input">Skin Goals or Search Query</label>
+            <input 
+              type="text" 
+              id="rec-query-input" 
+              class="input-field" 
+              placeholder="e.g. soothing barrier repair cream for redness"
+              value="soothing gentle barrier repair"
+            >
+            <div class="form-hint">Quick prompts:</div>
+            <div class="quick-chip-suggestions">
+              <button class="sugg-chip" data-rec-query="hydrating hyaluronic plumping serum">Hyaluronic Serum</button>
+              <button class="sugg-chip" data-rec-query="salicylic acid blemish clarifying foam">Blemish Cleanser</button>
+              <button class="sugg-chip" data-rec-query="anti-aging peptide retinol renewal">Anti-Aging Retinol</button>
+              <button class="sugg-chip" data-rec-query="mineral zinc physical sunscreen">Mineral SPF</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Ingredients (Weighted Higher)</label>
+            <div class="chip-input-container" id="preferred-chips-container">
+              <input 
+                type="text" 
+                id="preferred-text-input" 
+                class="chip-text-input" 
+                placeholder="Type ingredient & press Enter..."
+              >
+            </div>
+            <div class="quick-chip-suggestions">
+              <button class="sugg-chip" data-add-pref="Ceramide NP">+ Ceramides</button>
+              <button class="sugg-chip" data-add-pref="Hyaluronic Acid">+ Hyaluronic Acid</button>
+              <button class="sugg-chip" data-add-pref="Centella Asiatica">+ Cica</button>
+              <button class="sugg-chip" data-add-pref="Squalane">+ Squalane</button>
+              <button class="sugg-chip" data-add-pref="Retinol">+ Retinol</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Strictly Excluded Ingredients (Hard Filter)</label>
+            <div class="chip-input-container" id="excluded-chips-container">
+              <input 
+                type="text" 
+                id="excluded-text-input" 
+                class="chip-text-input" 
+                placeholder="Type ingredient to exclude..."
+              >
+            </div>
+            <div class="quick-chip-suggestions">
+              <button class="sugg-chip" data-add-excl="Fragrance">+ Fragrance</button>
+              <button class="sugg-chip" data-add-excl="Alcohol Denat.">+ Alcohol Denat.</button>
+              <button class="sugg-chip" data-add-excl="Parfum">+ Parfum</button>
+              <button class="sugg-chip" data-add-excl="Sulfur">+ Sulfur</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="rec-category-select">Product Category</label>
+            <select id="rec-category-select" class="select-field">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem;">
+              <label class="form-label" for="rec-budget-slider" style="margin-bottom: 0;">Max Budget</label>
+              <span id="rec-budget-display" style="font-weight: 700; color: var(--color-terracotta); font-size: 0.95rem;">$35</span>
+            </div>
+            <input 
+              type="range" 
+              id="rec-budget-slider" 
+              min="10" 
+              max="70" 
+              step="5" 
+              value="35" 
+              style="width: 100%; accent-color: var(--color-primary);"
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="rec-topk-select">Number of Matches (Top K)</label>
+            <select id="rec-topk-select" class="select-field">
+              <option value="3">Top 3</option>
+              <option value="5" selected>Top 5</option>
+              <option value="8">Top 8</option>
+            </select>
+          </div>
+
+          <button id="rec-submit-btn" class="btn btn-primary" style="width: 100%;">
+            Find Recommended Products
+          </button>
+        </div>
+
+        <!-- Results Display Panel -->
+        <div id="rec-results-panel" class="rec-results-panel">
+          <div class="empty-state">
+            <div class="empty-icon">🌿</div>
+            <h3 class="empty-title">Ready for Your Query</h3>
+            <p class="empty-desc">
+              Adjust your preferred ingredients and budget on the left, then click <strong>Find Recommended Products</strong> to run the TF-IDF cosine similarity model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 4: CUSTOMER REVIEW ANALYTICS -->
+    <!-- ===================================================================== -->
+    <section id="view-reviews" class="view-section">
+      <div class="section-header">
+        <div class="section-tag">Natural Language Processing</div>
+        <h2 class="section-title">Customer Review Analytics</h2>
+        <p class="section-description">
+          Review sentiment trends, recurring skincare themes extracted via text n-grams, and transparent feedback tables.
+        </p>
+      </div>
+
+      <!-- Recurring Skincare Themes (N-grams) -->
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+          Recurring Skincare Review Themes (N-grams)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+          Frequently co-occurring 2-gram and 3-gram phrases extracted automatically from cleaned feedback texts.
+        </p>
+        <div class="themes-grid" id="recurring-themes-grid">
+          <!-- Themes injected by JS -->
+        </div>
+      </div>
+
+      <!-- Review Table Controls -->
+      <div class="filter-bar">
+        <div class="filter-row">
+          <div class="search-box">
+            <input 
+              type="text" 
+              id="review-search-input" 
+              class="input-field" 
+              placeholder="Search review keywords (e.g. hydration, breakout, redness)..."
+            >
+          </div>
+          <div style="min-width: 180px;">
+            <select id="review-sentiment-filter" class="select-field">
+              <option value="">All Sentiments</option>
+              <option value="positive">Positive</option>
+              <option value="neutral">Neutral</option>
+              <option value="negative">Negative</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Table -->
+      <div class="review-table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product</th>
+              <th>Rating</th>
+              <th>Sentiment</th>
+              <th>Customer Review Excerpt</th>
+            </tr>
+          </thead>
+          <tbody id="reviews-table-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+        <span id="reviews-page-info" style="font-size: 0.85rem; color: var(--color-text-muted);">Page 1 of 1</span>
+        <div style="display: flex; gap: 0.5rem;">
+          <button id="review-prev-page" class="btn btn-secondary btn-sm" disabled>Previous</button>
+          <button id="review-next-page" class="btn btn-secondary btn-sm" disabled>Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 5: MODEL EVALUATION & SENTIMENT SANDBOX -->
+    <!-- ===================================================================== -->
+    <section id="view-evaluation" class="view-section">
+      <div class="section-header">
+        <div class="section-tag">Validation &amp; Benchmarks</div>
+        <h2 class="section-title">Model Evaluation Dashboard &amp; Sandbox</h2>
+        <p class="section-description">
+          Honest, held-out evaluation metrics calculated from real data splits. 
+          Includes live interactive inference for custom user reviews.
+        </p>
+      </div>
+
+      <!-- Live Sentiment Classifier Sandbox -->
+      <div class="sandbox-card">
+        <div class="section-tag">Interactive Machine Learning Sandbox</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary-dark); margin-bottom: 0.4rem;">
+          Test the Supervised Sentiment Classifier
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1.2rem;">
+          Enter custom customer feedback to compute real-time class probabilities using our fitted TF-IDF + Logistic Regression pipeline.
+        </p>
+
+        <textarea 
+          id="sentiment-test-input" 
+          class="input-field" 
+          rows="3" 
+          style="border-radius: var(--radius-sm); resize: vertical;" 
+          placeholder="Type or paste any skincare customer review here..."
+        >The oat cleanser has completely calmed my sensitive skin without causing any breakouts. Highly recommend!</textarea>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; flex-wrap: wrap; gap: 0.8rem;">
+          <div class="quick-chip-suggestions">
+            <span style="font-size: 0.75rem; color: var(--color-text-light);">Try sample:</span>
+            <button class="sugg-chip" data-sample-review="Absolutely love this serum! Hydrates deeply and leaves a healthy dewy glow.">Positive Sample</button>
+            <button class="sugg-chip" data-sample-review="It is an okay moisturizer. Hydrates moderately but nothing special for the price.">Neutral Sample</button>
+            <button class="sugg-chip" data-sample-review="Caused severe breakouts and burning around my cheeks. Strong fragrance!">Negative Sample</button>
+          </div>
+          <button id="sentiment-predict-btn" class="btn btn-primary btn-sm">Predict Sentiment</button>
+        </div>
+
+        <div id="sentiment-result-box" class="sentiment-result-box" style="display: none;">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Classification Metrics Grid -->
+      <div style="margin: 2.5rem 0 1rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary-dark);">
+          1. Supervised Sentiment Classification Metrics (Held-out Test Split)
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted);">
+          Evaluated strictly on a 25% stratified held-out test partition. Vectorizers were fitted strictly on training data to prevent leakage.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Accuracy</div>
+          <div class="stat-value" id="eval-acc">--</div>
+          <div class="stat-meta">Held-out test set</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Macro F1-Score</div>
+          <div class="stat-value" id="eval-f1">--</div>
+          <div class="stat-meta">Balanced across classes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Macro Precision</div>
+          <div class="stat-value" id="eval-prec">--</div>
+          <div class="stat-meta">Average class precision</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Macro Recall</div>
+          <div class="stat-value" id="eval-rec">--</div>
+          <div class="stat-meta">Average class recall</div>
+        </div>
+      </div>
+
+      <!-- Confusion Matrix & Benchmark Model Comparison -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; margin: 2rem 0;">
+        <div class="stat-card">
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+            Confusion Matrix (Test Partition)
+          </h4>
+          <div id="confusion-matrix-container">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+        <div class="stat-card">
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+            Candidate Model Comparison
+          </h4>
+          <div id="baseline-comparison-table">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendation Metrics -->
+      <div style="margin: 3rem 0 1rem; border-top: 1px dashed var(--color-beige-border); padding-top: 2rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary-dark);">
+          2. Content-Based Recommender Quality Metrics
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted);">
+          Computed across 6 benchmark user scenarios targeting specific skin concerns, budget caps, and ingredient preferences.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Mean Precision@5</div>
+          <div class="stat-value" id="eval-p-k">--</div>
+          <div class="stat-meta">Strict criteria satisfaction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Mean Recall@5</div>
+          <div class="stat-value" id="eval-r-k">--</div>
+          <div class="stat-meta">Surfacing relevant items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Mean NDCG@5</div>
+          <div class="stat-value" id="eval-ndcg">--</div>
+          <div class="stat-meta">Ranking quality score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Catalogue Coverage</div>
+          <div class="stat-value" id="eval-cov">--</div>
+          <div class="stat-meta">Diversity across scenarios</div>
+        </div>
+      </div>
+
+      <!-- Scenario Breakdown Table -->
+      <div class="review-table-card" style="margin: 1.5rem 0 3rem;">
+        <div style="padding: 1.2rem; background: var(--color-cream); border-bottom: 1px solid var(--color-beige-border);">
+          <h4 style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-primary-dark);">
+            Benchmark Scenarios Breakdown
+          </h4>
+        </div>
+        <div id="scenario-breakdown-table">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- EDA Visuals Gallery -->
+      <div style="margin: 2rem 0 1rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary-dark);">
+          3. Exploratory Data Analysis (EDA) Gallery
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted);">
+          Charts generated directly from cleaned pipeline outputs using Matplotlib and Seaborn.
+        </p>
+      </div>
+
+      <div class="charts-gallery" id="eda-charts-gallery">
+        <!-- Injected by JS -->
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 6: ABOUT, METHODOLOGY & ETHICS -->
+    <!-- ===================================================================== -->
+    <section id="view-about" class="view-section">
+      <div class="section-header">
+        <div class="section-tag">Provenance &amp; Internship Scope</div>
+        <h2 class="section-title">About GlowRight &amp; Ethical Methodology</h2>
+        <p class="section-description">
+          Documentation of the six-week Data Science with Python curriculum, synthetic dataset provenance, and dermatological prototype boundaries.
+        </p>
+      </div>
+
+      <div class="hero-card" style="padding: 2.2rem; margin-bottom: 2rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+          Six-Week Data Science Internship Roadmap
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1.2rem;">
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 1: Foundations</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">Problem framing, stakeholder mapping, data dictionary design, and ethical boundary setting.</p>
+          </div>
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 2: Data Provenance</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">Schema definition, synthetic benchmarking, and pipeline requirements specification.</p>
+          </div>
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 3: Data Cleaning</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">Automated deduplication, range validation, INCI normalization, and schema checks.</p>
+          </div>
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 4: Exploratory Analysis</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">KDE distributions, boxplots, n-gram extraction, and publication-ready charting.</p>
+          </div>
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 5: Modeling &amp; Baselines</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">TF-IDF vectorization, Cosine similarity, hard exclusion filters, and supervised sentiment modeling.</p>
+          </div>
+          <div style="background: white; padding: 1.2rem; border-radius: var(--radius-sm); border: 1px solid var(--color-beige-border);">
+            <strong style="color: var(--color-terracotta);">Week 6: Evaluation &amp; Deployment</strong>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.3rem;">Precision@K, NDCG@K, confusion matrix inspection, Flask REST API, and web interface.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ethical AI Principles -->
+      <div class="stat-card" style="margin-bottom: 2rem;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+          Responsible AI &amp; Safety Guidelines
+        </h3>
+        <ul style="padding-left: 1.4rem; font-size: 0.92rem; color: var(--color-text-main); line-height: 1.8;">
+          <li><strong>No Medical Diagnosis:</strong> GlowRight is an algorithmic text-matching prototype and never diagnoses eczema, rosacea, cystic acne, or melanoma.</li>
+          <li><strong>No Allergenic Guarantees:</strong> Text matching cannot guarantee personal immunological safety. Patch testing is always necessary for consumer safety.</li>
+          <li><strong>Sentiment &ne; Efficacy:</strong> Positive customer reviews indicate cosmetic satisfaction and sensorial appeal, not clinical efficacy.</li>
+          <li><strong>Data Privacy:</strong> User queries and exclusions are evaluated ephemerally in-memory and are never permanently stored without explicit consent.</li>
+          <li><strong>Open Sourcing:</strong> Starter datasets are clearly tagged as synthetic demo data to ensure zero copyright or customer privacy infringement.</li>
+        </ul>
+      </div>
+
+      <!-- Replacing with Real Datasets -->
+      <div class="stat-card">
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+          Instructions for Integrating Real Public Datasets
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+          To migrate from synthetic benchmark data to real licensed cosmetics records:
+        </p>
+        <ol style="padding-left: 1.4rem; font-size: 0.88rem; color: var(--color-text-main); line-height: 1.8;">
+          <li>Download an open cosmetics dataset, such as <strong>Open Beauty Facts (ODbL)</strong> or an open Kaggle Sephora reviews corpus.</li>
+          <li>Map columns to the schema documented in <a href="#" style="color: var(--color-primary);">data/README.md</a>.</li>
+          <li>Place cleaned CSVs in <code>data/products_demo.csv</code> and <code>data/reviews_demo.csv</code>.</li>
+          <li>Execute <code>python run_pipeline.py</code> to regenerate all models, charts, and evaluations.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div id="product-detail-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeProductModal()">&times;</button>
+      <div id="modal-body-content">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-title">GlowRight</div>
+          <p style="font-size: 0.85rem; max-width: 480px; margin-top: 0.4rem; color: #a9b8b0;">
+            A full-stack Python data science application for content-based skincare matching, customer review analytics, and model evaluation.
+          </p>
+        </div>
+        <div style="font-size: 0.82rem; color: #a9b8b0;">
+          <div>Six-Week Data Science Internship</div>
+          <div>Stack: Flask &bull; scikit-learn &bull; pandas &bull; Matplotlib</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 GlowRight Data Science Project. Academic &amp; Portfolio Demonstration.</div>
+        <div style="color: #a9b8b0;">All synthetic benchmark records labeled with is_demo=True</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
