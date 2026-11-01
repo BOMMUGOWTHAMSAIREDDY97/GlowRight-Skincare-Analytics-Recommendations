@@ -151,8 +151,9 @@ function renderCatalogueCategoryPills() {
   `;
 
   STATE.categories.forEach((c) => {
+    const catSlug = c.name.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const btn = document.createElement("button");
-    btn.className = `pill-btn ${STATE.catalogue.category === c.name ? "active" : ""}`;
+    btn.className = `pill-btn cat-pill-${catSlug} ${STATE.catalogue.category === c.name ? "active" : ""}`;
     btn.setAttribute("data-cat", c.name);
     btn.textContent = `${c.name} (${c.count})`;
     btn.addEventListener("click", () => {
@@ -300,8 +301,9 @@ function resetCatalogueFilters() {
 }
 
 function createProductCard(p) {
+  const catSlug = (p.category || "").toLowerCase().replace(/[^a-z0-9]/g, "-");
   const card = document.createElement("div");
-  card.className = "product-card";
+  card.className = `product-card card-cat-${catSlug}`;
 
   // Shorten ingredients preview
   const ingShort = (p.ingredients_normalized || p.ingredients || "").slice(0, 85) + "...";
@@ -309,7 +311,7 @@ function createProductCard(p) {
   card.innerHTML = `
     <div class="product-card-top">
       <div class="product-badges">
-        <span class="badge-cat">${p.category}</span>
+        <span class="badge-cat cat-badge-${catSlug}">${p.category}</span>
         ${p.is_demo ? `<span class="badge-demo">Demo Data</span>` : ""}
       </div>
       <div class="product-brand">${p.brand}</div>
@@ -586,17 +588,18 @@ function renderRecommendationResults(data) {
   `;
 
   recs.forEach((r, idx) => {
+    const catSlug = (r.category || "").toLowerCase().replace(/[^a-z0-9]/g, "-");
     const simPct = (r.similarity_score * 100).toFixed(1);
     const reasonsHtml = (r.match_reasons || [])
       .map((m) => `<span class="reason-tag">✓ ${m}</span>`)
       .join("");
 
     html += `
-      <div class="rec-card">
+      <div class="rec-card card-cat-${catSlug}">
         <div>
           <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.3rem;">
-            <span class="badge-cat">${r.category}</span>
-            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-text-light); font-weight: 600;">
+            <span class="badge-cat cat-badge-${catSlug}">${r.category}</span>
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-text-light); font-weight: 700;">
               ${r.brand}
             </span>
           </div>
@@ -637,11 +640,11 @@ function renderRecommendationResults(data) {
 
   baseline.forEach((b) => {
     html += `
-      <div style="background: var(--color-cream); border: 1px solid var(--color-beige-border); border-radius: var(--radius-sm); padding: 1rem;">
-        <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary);">${b.category}</span>
-        <h5 style="font-size: 0.95rem; font-weight: 700; color: var(--color-primary-dark); margin: 0.2rem 0;">${b.product_name}</h5>
-        <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-top: 0.5rem;">
-          <span>$${b.price.toFixed(2)}</span>
+      <div style="background: linear-gradient(135deg, #f8faff 0%, #fef6ff 100%); border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 1.2rem; box-shadow: var(--shadow-sm);">
+        <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; background: var(--grad-aurora); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">${b.category}</span>
+        <h5 style="font-size: 1rem; font-weight: 800; color: var(--color-text-main); margin: 0.3rem 0;">${b.product_name}</h5>
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; margin-top: 0.6rem;">
+          <span style="color: var(--color-primary-dark); font-size: 1.1rem;">$${b.price.toFixed(2)}</span>
           <span><span class="stars">★</span> ${b.rating.toFixed(1)}</span>
         </div>
       </div>

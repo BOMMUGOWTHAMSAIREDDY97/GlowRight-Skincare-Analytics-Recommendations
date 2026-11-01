@@ -46,6 +46,7 @@ app = Flask(
     template_folder=str(WEB_DIR / "templates"),
     static_folder=str(STATIC_DIR),
 )
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 CORS(app)
 
 # Global in-memory cache for models and datasets
@@ -75,17 +76,27 @@ def load_application_state():
             logger.warning("Cleaned reviews not found. Run run_pipeline.py first.")
 
         # 2. Load Recommender
+        recommender_loaded = False
         if RECOMMENDER_MODEL_PATH.exists():
-            APP_STATE["recommender"] = ContentRecommender.load(RECOMMENDER_MODEL_PATH)
-        elif APP_STATE["products_df"] is not None:
+            try:
+                APP_STATE["recommender"] = ContentRecommender.load(RECOMMENDER_MODEL_PATH)
+                recommender_loaded = True
+            except Exception as rec_err:
+                logger.warning(f"Failed to load pickled recommender ({rec_err}), falling back to in-memory fit.")
+        if not recommender_loaded and APP_STATE["products_df"] is not None:
             APP_STATE["recommender"] = ContentRecommender().fit(APP_STATE["products_df"])
 
         # 3. Load Sentiment Pipeline
+        sentiment_loaded = False
         if SENTIMENT_MODEL_PATH.exists() and SENTIMENT_VEC_PATH.exists():
-            APP_STATE["sentiment_pipeline"] = SentimentClassifierPipeline.load(
-                SENTIMENT_MODEL_PATH, SENTIMENT_VEC_PATH
-            )
-        elif APP_STATE["reviews_df"] is not None:
+            try:
+                APP_STATE["sentiment_pipeline"] = SentimentClassifierPipeline.load(
+                    SENTIMENT_MODEL_PATH, SENTIMENT_VEC_PATH
+                )
+                sentiment_loaded = True
+            except Exception as sent_err:
+                logger.warning(f"Failed to load pickled sentiment models ({sent_err}), falling back to in-memory fit.")
+        if not sentiment_loaded and APP_STATE["reviews_df"] is not None:
             pipeline = SentimentClassifierPipeline()
             pipeline.train_and_evaluate(APP_STATE["reviews_df"])
             APP_STATE["sentiment_pipeline"] = pipeline
